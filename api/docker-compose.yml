@@ -1,0 +1,22 @@
+services:
+  admin_api:
+    build: .
+    container_name: nest_admin_api
+    restart: unless-stopped
+    ports:
+      - "3320:3000"
+    env_file:
+      - .env.production
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./runtime/uploads:/app/runtime/uploads
+      - ./runtime/logs:/app/runtime/logs
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3000/health >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s

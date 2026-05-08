@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+html,
+body,
+#root {
+    height: 100%;
+}
+
+.ma-content-block {
+    background-color: var(--color-bg-2);
+    border-radius: 2px;
+}
+
+.ant-layout,
+.ant-layout-content {
+    min-width: 0;
+}
+
+.ant-table-wrapper {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .ant-form-inline {
+        row-gap: 10px !important;
+    }
+
+    .ant-form-inline .ant-form-item {
+        margin-inline-end: 8px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .ant-form-inline .ant-form-item-control-input-content {
+        max-width: calc(100vw - 56px);
+    }
+
+    .ant-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .ant-pagination {
+        flex-wrap: wrap;
+        row-gap: 8px;
+    }
+
+    .ant-btn {
+        white-space: nowrap;
+    }
+}

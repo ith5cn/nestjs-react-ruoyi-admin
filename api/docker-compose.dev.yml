@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  # 本地开发用 MySQL 服务
+  mysql:
+    image: mysql:8.0
+    container_name: nest_admin_mysql_dev
+    restart: unless-stopped
+    ports:
+      - "3308:3306"
+    # 根据你的 .env.development 文件注入初始配置
+    environment:
+      MYSQL_ROOT_PASSWORD: "123456"
+      TZ: "Asia/Shanghai"
+    volumes:
+      # 将数据持久化到本地文件夹中，防止重启清空表
+      - ./docker-data/mysql:/var/lib/mysql
+      # # 将建库脚本挂载到初始化目录中，首次启动时顺手创建全部多库
+      # - ./docker-data/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    # 强制旧版密码鉴权插件以防 Node.js 旧版驱动连不上
+    command: 
+      - --default-authentication-plugin=mysql_native_password
+      - --lower-case-table-names=1
+
+  # 本地开发用 Redis 服务
+  redis:
+    image: redis:alpine
+    container_name: nest_admin_redis_dev
+    restart: unless-stopped
+    ports:
+      - "6381:6379"
+    # 根据你的 .env.development 配置文件设置密码
+    command: redis-server --appendonly yes --requirepass "123456"
+    environment:
+      TZ: "Asia/Shanghai"
+    volumes:
+      # 将 Redis 持久化数据挂载
+      - ./docker-data/redis:/data

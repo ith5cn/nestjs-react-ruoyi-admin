@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#c1c1ff",
+                        "secondary": "#4646d8",
+                        "on-primary-fixed-variant": "#004f56",
+                        "on-secondary-fixed-variant": "#2e2bc2",
+                        "inverse-on-surface": "#eff1f2",
+                        "surface-tint": "#006971",
+                        "tertiary-container": "#a3a4f4",
+                        "outline": "#6c7a7b",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#3d3e87",
+                        "primary-fixed-dim": "#5dd7e5",
+                        "on-secondary-fixed": "#07006c",
+                        "on-surface-variant": "#3c494b",
+                        "surface-container-low": "#f2f4f5",
+                        "surface-bright": "#f8fafb",
+                        "surface": "#f8fafb",
+                        "background": "#f8fafb",
+                        "tertiary-fixed": "#e1dfff",
+                        "on-primary-fixed": "#001f23",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-primary-container": "#00474d",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#fffbff",
+                        "surface-variant": "#e1e3e4",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bbc9cb",
+                        "on-surface": "#191c1d",
+                        "primary": "#006971",
+                        "surface-dim": "#d8dadb",
+                        "secondary-fixed": "#e1e0ff",
+                        "on-tertiary-container": "#36377f",
+                        "inverse-surface": "#2e3132",
+                        "inverse-primary": "#5dd7e5",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#6062f2",
+                        "surface-container-high": "#e6e8e9",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#c1c1ff",
+                        "on-tertiary-fixed": "#0f0d5a",
+                        "primary-container": "#3abbc9",
+                        "surface-container": "#eceeef",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary": "#5557a0",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#89f2ff",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(187, 201, 203, 0.15);
+        }
+        .ethereal-grid {
+            background-image: 
+                radial-gradient(circle at 2px 2px, rgba(0, 105, 113, 0.03) 1px, transparent 0);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-hidden">
+<main class="relative min-h-screen flex items-center justify-center ethereal-grid px-6">
+<!-- Background Auras -->
+<div class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px]"></div>
+<div class="container max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+<!-- Left Side: Branding & Stats -->
+<div class="space-y-12">
+<div class="space-y-6">
+<h1 class="text-6xl font-headline font-bold text-on-surface tracking-tight leading-tight">
+                    若依 AI <br/>
+<span class="text-primary">管理后台</span>
+</h1>
+<p class="text-xl text-on-surface-variant/80 max-w-md leading-relaxed">
+                    进入天枢架构，调度智能代理，管理高维数据集。
+                </p>
+</div>
+<!-- Stats Grid: Bento Style -->
+<div class="grid grid-cols-3 gap-6 max-w-lg">
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="text-label-md text-primary font-medium tracking-wider mb-2 uppercase">Latency</div>
+<div class="text-3xl font-headline font-semibold text-on-surface">2.4<span class="text-sm font-normal text-on-surface-variant ml-1">ms</span></div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="text-label-md text-secondary font-medium tracking-wider mb-2 uppercase">Uptime</div>
+<div class="text-3xl font-headline font-semibold text-on-surface">99.9<span class="text-sm font-normal text-on-surface-variant ml-1">%</span></div>
+</div>
+<div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant/10">
+<div class="text-label-md text-primary font-medium tracking-wider mb-2 uppercase">Data</div>
+<div class="text-3xl font-headline font-semibold text-on-surface">128<span class="text-sm font-normal text-on-surface-variant ml-1">TB</span></div>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="flex items-center space-x-4">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="professional woman portrait soft lighting minimalist background studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAO-YWXfmX-gAjQKzSqNCedAYwMtFRlJj1XWIVq-tfVEtCtiv_r1fwJfHF8WshhitKHLTXerxztSrImyuauiV8PBYcFvTg1IcWawE9pGZmNBEYac6uVpClUG9IFHICUr6hbDUIn9U6AYlKrqIphMZF2y_hkyDSwL40scOYvJ9rQmm7xvP9xAcfQFzLBLKeILdlLKQhZkPQ0C_TmiZCh9y7m3lmbEzrq3JQhDGxX3xvkEdCgokEc3BcxP5cBp2vP1XYhuHxE2bMv_hWW"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-background overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="modern businessman portrait soft natural light editorial style professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQyYgr_arR5t8EK6giwk7Rp4Tb5B_AoE5MnsCh3d7D0A6WyYTixq6jPrxn54jqF3QG5sdQAvqtluzQKD0_GzFYNDB0F1BuKOIMvnHQAM2wPkdqxBjMV2DHEowHNcCxWxpXTczsjfJvxvFPJhSYQroFuLrHo_kirvnBjNz7Uk2kH_5vSSI3F1tOB-wYjrBNg2A6aXeg27XgSrIfRKXX_l0fM22CArzsNCGSshOLCkTYf9lY29xg6yqBqvDpf3ckxFetQJe6wxbx-XP5"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-background bg-primary-container flex items-center justify-center">
+<span class="text-[10px] font-bold text-on-primary-container">+5k</span>
+</div>
+</div>
+<div class="text-sm text-on-surface-variant font-medium">
+                    当前已有 5,000+ 企业部署天枢集群
+                </div>
+</div>
+</div>
+<!-- Right Side: Login Card -->
+<div class="flex justify-center lg:justify-end">
+<div class="glass-panel w-full max-w-[480px] p-10 rounded-[2rem] shadow-[0px_40px_80px_rgba(0,105,113,0.08)] relative overflow-hidden">
+<!-- Subtle Interior Glow -->
+<div class="absolute -top-24 -right-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="mb-10 text-center">
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-2">欢迎回来</h2>
+<p class="text-on-surface-variant/60 text-sm">请通过管理凭据或生物识别验证身份</p>
+</div>
+<form class="space-y-6">
+<div class="space-y-2">
+<label class="text-xs font-semibold tracking-widest text-primary uppercase ml-1">访问标识 / 用户名</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-lg">person</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest/30 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-on-surface-variant/30" placeholder="Access ID or Username" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold tracking-widest text-primary uppercase ml-1">安全令牌</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant/40 text-lg">vpn_key</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-highest/30 border-none rounded-xl focus:ring-2 focus:ring-primary/20 transition-all text-on-surface placeholder:text-on-surface-variant/30" placeholder="Access Cipher" type="password"/>
+</div>
+<div class="flex justify-end">
+<a class="text-xs text-on-surface-variant/60 hover:text-primary transition-colors" href="#">忘记访问令牌?</a>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white rounded-xl font-semibold shadow-xl shadow-primary/25 hover:bg-[#005a61] hover:shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center space-x-2" type="button">
+<span>初始化访问</span>
+<span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+</button>
+</form>
+<div class="relative my-8">
+<div class="absolute inset-0 flex items-center"><div class="w-full border-t border-outline-variant/10"></div></div>
+<div class="relative flex justify-center text-xs uppercase tracking-tighter"><span class="bg-white/0 px-4 text-on-surface-variant/40">其他认证方式</span></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center space-x-3 py-3 px-4 bg-white border border-outline-variant/15 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-secondary group-hover:scale-110 transition-transform">fingerprint</span>
+<span class="text-sm font-medium text-on-surface">生物识别</span>
+</button>
+<button class="flex items-center justify-center space-x-3 py-3 px-4 bg-white border border-outline-variant/15 rounded-xl hover:bg-surface-container-low transition-all active:scale-95 group">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">hub</span>
+<span class="text-sm font-medium text-on-surface">OAuth 登录</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

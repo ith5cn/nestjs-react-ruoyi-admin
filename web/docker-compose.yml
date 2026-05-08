@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  # 前端 Web 静态资源服务 (Nginx)
+  admin_react:
+    build: .
+    container_name: yun_sale_admin_react
+    restart: always
+    # 如果生产机器的 80 被其他占用，请自行修改比如 "8080:80"
+    ports:
+      - "80:80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro

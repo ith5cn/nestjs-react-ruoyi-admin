@@ -1,0 +1,9 @@
+.header-menu .ant-menu-item::after,
+.header-menu .ant-menu-submenu::after {
+  display: none !important;
+}
+
+.header-menu .ant-menu-item-selected::after,
+.header-menu .ant-menu-submenu-selected::after {
+  display: none !important;
+}
